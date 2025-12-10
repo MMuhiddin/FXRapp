@@ -113,7 +113,7 @@ STATIC_URL = 'static/'
 
 # O'ZGARDI: Biz yaratadigan style.css va rasmlar turadigan papka (Development uchun)
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    BASE_DIR / 'conf/static',
 ]
 
 # Bu papka sayt internetga chiqqanda (deploy) ishlatiladi

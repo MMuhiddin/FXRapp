@@ -107,3 +107,29 @@ def logout_user(request):
     logout(request)
     messages.info(request, "Tizimdan muvaffaqiyatli chiqdingiz.")
     return redirect('login_register')
+
+
+# frxapp/views.py ichiga qo'shing
+
+@login_required(login_url='login_register')
+def video_lessons_view(request):
+    # Barcha aktiv kurslarni olib kelamiz
+    courses = Course.objects.filter(is_active=True)
+
+    context = {
+        'courses': courses
+    }
+    return render(request, 'video_lessons.html', context)
+
+
+# frxapp/views.py ichiga (pastga) qo'shing
+
+@login_required(login_url='login_register')
+def books_view(request):
+    # 'book' turidagi barcha resurslarni olib kelamiz
+    books = Resource.objects.filter(type='book')
+
+    context = {
+        'books': books
+    }
+    return render(request, 'books.html', context)

@@ -1,0 +1,41 @@
+{% load static %}
+
+{% block header %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boshqaruv Paneli | FRXApp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+
+        <aside class="sidebar">
+            <div class="logo">FXRiskApp</div>
+            <nav class="main-nav">
+                <ul>
+                    <li class="active"><a href="#"><i class="fas fa-home"></i> Bosh sahifa</a></li>
+                    <li><a href="#"><i class="fas fa-chart-line"></i> Tahlil</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> Foydalanuvchilar</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Sozlamalar</a></li>
+                    <li><a href="#"><i class="fas fa-sign-out-alt"></i> Chiqish</a></li>
+                </ul>
+            </nav>
+        </aside>
+{% endblock header%}
+
+
+{% block content %}
+
+{% endblock content %}
+
+
+{% block footer %}
+    </div>
+</body>
+</html>
+{% endblock footer %}

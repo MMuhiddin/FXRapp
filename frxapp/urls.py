@@ -18,5 +18,11 @@ urlpatterns = [
     # Dashboardga o'tish
     path('dashboard/', views.dashboard_view, name='dashboard'),
 
+    # Video Darsliklar sahifasi
+    path('videos/', views.video_lessons_view, name='video_lessons'),
+
+    # YANGI: Kitoblar sahifasi
+    path('books/', views.books_view, name='books'),
+
     # ... (boshqa URL lar) ...
 ]

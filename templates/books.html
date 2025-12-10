@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+    <main class="main-content">
+
+            <div class="mobile-app-header">
+                <h1>Kutubxona</h1>
+            </div>
+
+            <header class="top-bar">
+                <div class="welcome-text" style="display: flex; align-items: center; gap: 10px;">
+                    <a href="{% url 'dashboard' %}" style="font-size: 1.2rem; color: #4a55a2;"><i class="fas fa-arrow-left"></i></a>
+                    <div>
+                        <h2>Elektron Kitoblar</h2>
+                        <p>Foydali qo'llanmalar va kitoblar to'plami</p>
+                    </div>
+                </div>
+
+                <div class="user-info">
+                    <div class="notification-box">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                </div>
+            </header>
+
+            <section class="modules-section">
+
+                <div class="modules-grid">
+
+                    {% for book in books %}
+                    <a href="{{ book.file.url }}" target="_blank" class="module-card green">
+                        <div class="icon-box">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>{{ book.title }}</h4>
+                            <p>{{ book.description|truncatewords:5 }}</p>
+                        </div>
+                        <div class="arrow-icon">
+                            <i class="fas fa-download"></i> </div>
+                    </a>
+                    {% empty %}
+                    <p style="color: #666; padding: 20px;">Hozircha kitoblar yuklanmagan.</p>
+                    {% endfor %}
+
+                </div>
+            </section>
+
+        </main>
+{% endblock content %}
+
+
