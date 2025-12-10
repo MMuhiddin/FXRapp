@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boshqaruv Paneli | FRXApp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+
+        <aside class="sidebar">
+            <div class="logo">FXRiskApp</div>
+            <nav class="main-nav">
+                <ul>
+                    <li class="active"><a href="#"><i class="fas fa-home"></i> Bosh sahifa</a></li>
+                    <li><a href="#"><i class="fas fa-chart-line"></i> Tahlil</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> Foydalanuvchilar</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Sozlamalar</a></li>
+                    <li><a href="#"><i class="fas fa-sign-out-alt"></i> Chiqish</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <div class="mobile-app-header">
+                <h1>FXRiskapp</h1>
+            </div>
+
+            <header class="top-bar">
+                <div class="welcome-text">
+                    <h2>Boshqaruv Markazi</h2>
+                    <p>Xush kelibsiz, <span class="user-highlight">{{ request.user.username }}</span>! Bugun nima
+                        o'rganamiz?</p>
+                </div>
+                <div class="user-info">
+                    <div class="notification-box">
+                        <i class="fas fa-bell"></i></div>
+                    <span>{{ request.user.username }}</span>
+                </div>
+            </header>
+
+            <section class="modules-section">
+                <h3 class="section-title">O'quv Platformasi</h3>
+
+                <div class="modules-grid">
+
+                    <a href="#" class="module-card blue">
+                        <div class="icon-box">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>Video Darsliklar</h4>
+                            <p>{{ video_count }} ta Kurs mavjud</p>
+                        </div>
+                        <div class="arrow-icon">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="#" class="module-card green">
+                        <div class="icon-box">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>Kutubxona</h4>
+                            <p>{{ book_count }} ta Kitob</p>
+                        </div>
+                        <div class="arrow-icon">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="#" class="module-card orange">
+                        <div class="icon-box">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>Risk Kalkulyator</h4>
+                            <p>Strategiyani hisoblash</p>
+                        </div>
+                        <div class="arrow-icon">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+
+                    <a href="#" class="module-card purple">
+                        <div class="icon-box">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>Quiz Testlar</h4>
+                            <p>{{ quiz_count }} ta Savol</p>
+                        </div>
+                        <div class="arrow-icon">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="#" class="module-card cyan">
+                        <div class="icon-box">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>AI Yordamchi</h4>
+                            <p>Sun'iy intellekt tahlili</p>
+                        </div>
+                        <div class="arrow-icon">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="#" class="module-card red">
+                        <div class="icon-box">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>Yordam Markazi</h4>
+                            <p>Admin bilan bog'lanish</p>
+                        </div>
+                        <div class="arrow-icon">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>
